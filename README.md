@@ -48,41 +48,47 @@ If an API key is missing, malformed, or invalid, you will receive an HTTP 401 Un
 Success: 201 Created
 ```
 
-**Authenticate user:**
-```
-URL: http://localhost:3000/api/login
+#### Authenticate user
 
-Method: POST
+**URL:** `http://localhost:3000/api/login`
 
-Headers:
+**Method:** `POST`
 
-Content-Type: application/json
-Body:
+**Headers:**
+
+- `Content-Type: application/json`
+
+**Body:**
+
+```json
 {
     "usernameOrEmail": "admin",
     "password": "admin123"
 }
-Response:
+```
+
+**Response:**
+
+```json
 {
     "message": "success",
     "accessToken": "token"
 }
 ```
+
 ## Get authenticated profile
-```
-URL: http://localhost:3000/api/getProfile
 
-Method: GET
+**URL:** `http://localhost:3000/api/profile`
 
-Headers:
+**Method:** `GET`
 
-Authorization: Bearer <token>
+**Headers:**
 
-Responses: 200 OK
+- `Authorization: Bearer <token>`
+- `Content-Type: application/json`
 
+**Response:**
 
-```
-Success:
 ```json
 {
     "_id": "6718ddd33ecefa69806ebf71",
@@ -98,32 +104,19 @@ Success:
 }
 ```
 
-## Update authenticated user profile
+#### Update authenticated user profile
 
-```
-URL: http://localhost:3000/api/updateProfile
+**URL:** `http://localhost:3000/api/updateProfile`
 
-Method: PATCH
+**Method:** `PATCH`
 
-Headers:
+**Headers:**
 
-Authorization: Bearer <token>
-Content-Type: application/json
-```
-Body
-```json
-{
-    "displayName": "Display name updateds",
-    "gender": "female",
-    "birthday": "2002-08-21",
-    "interests": ["ff", "rugby", "rugby", "rugby"],
-    "zodiac": "fish",
-    "horoscope": "pisces",
-    "height": 178,
-    "weight": 80
-}
-```
-Response: 200 OK
+- `Authorization: Bearer <token>`
+- `Content-Type: application/json`
+
+**Body:**
+
 ```json
 {
     "displayName": "Display name updateds",
@@ -137,46 +130,72 @@ Response: 200 OK
 }
 ```
 
-## Send message to user
+**Response:**
+
+```json
+{
+    "displayName": "Display name updateds",
+    "gender": "female",
+    "birthday": "2002-08-21",
+    "interests": ["ff", "rugby", "rugby", "rugby"],
+    "zodiac": "fish",
+    "horoscope": "pisces",
+    "height": 178,
+    "weight": 80
+}
 ```
-URL: http://localhost:3000/api/sendMessage
 
-Method: POST
+#### Send message to user
 
-Headers:
+**URL:** `http://localhost:3000/api/sendMessage`
 
-Authorization: Bearer <token>
-Content-Type: application/json
-```
-Body
+**Method:** `POST`
+
+**Headers:**
+
+- `Authorization: Bearer <token>`
+- `Content-Type: application/json`
+
+**Body:**
+
 ```json
 {
     "receiverId": "6719196c00e5ef78f76b8af6",
     "content": "hello gayss"
 }
 ```
-Response: 200 OK
+
+**Response:**
+
+```json
+{
+    "message": "Message sent successfully"
+}
+```
 
 ## Zodiac
+
 ### Get zodiac
-```
-URL: http://localhost:3000/zodiac/getZodiac
 
-Method: POST
+**URL:** `http://localhost:3000/zodiac/getZodiac`
 
-Headers:
+**Method:** `POST`
 
-Authorization: Bearer <token>
-Content-Type: application/json
+**Headers:**
 
-```
-Body
+- `Authorization: Bearer <token>`
+- `Content-Type: application/json`
+
+**Body:**
+
 ```json
 {
     "birthdate": "1999-03-19"
 }
 ```
-Response
+
+**Response:**
+
 ```json
 {
     "zodiac": "Pisces",
