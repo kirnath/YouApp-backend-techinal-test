@@ -5,6 +5,11 @@ Consumer folder is for RabbitMQ Consumer
 # Producer
 
 The Producer is the primary API for your app, integrated with RabbitMQ.
+> **RabbitMQ URL is hard coded**
+
+> **MongoDB URL is hard coded**
+
+> **JWT Secret is hard coded with '*secret*' is the key**
 
 # API Docs
 
