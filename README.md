@@ -8,7 +8,7 @@ The Producer is the primary API for your app, integrated with RabbitMQ.
 
 # API Docs
 
-` PLESAE ADJUST BASE URL `
+> PLESAE ADJUST BASE URL
 
 ## Authentication
 
@@ -78,7 +78,7 @@ Success: 201 Created
 
 ## Get authenticated profile
 
-**URL:** `http://localhost:3000/api/profile`
+**URL:** `http://localhost:3000/api/getProfile`
 
 **Method:** `GET`
 
@@ -144,6 +144,7 @@ Success: 201 Created
     "weight": 80
 }
 ```
+## Message
 
 #### Send message to user
 
